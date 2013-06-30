@@ -52,16 +52,16 @@ uniform.variance();
 
 The currently implemented distributions are listed bellow.
 
-##### `Normal(mean = 0, sd = 1)` - The Normal Distribution
-
-Create a normal distribution, with a custom mean (`mean`) and standard deviation
-(`sd`).
-
 ##### `Uniform(a = 0, b = 1)` - The Uniform Distribution
 
 Create a uniform distribution, with a range from `a` to `b`. Note that
 `uniform.inv(p)` will return `NaN` outside the range from `0` to `1`,
 and that `uniform.inv(0) == a` and  `uniform.inv(1) == b`.
+
+##### `Normal(mean = 0, sd = 1)` - The Normal Distribution
+
+Create a normal distribution, with a custom mean (`mean`) and standard deviation
+(`sd`).
 
 ##### `Studentt(df)` - The Student t Distribution
 
