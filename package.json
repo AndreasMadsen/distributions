@@ -1,0 +1,31 @@
+{
+  "name": "distributions",
+  "description": "A collection of probability distribution functions",
+  "version": "0.2.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "main": "./distributions.js",
+  "scripts": {
+    "test": "tap test/simple/*"
+  },
+  "repository" : {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/distributions.git"
+  },
+  "keywords": [
+    "distribution",
+    "normal",
+    "studentt",
+    "uniform"
+  ],
+  "dependencies": {
+    "mathfn": "0.3.x"
+  },
+  "devDependencies": {
+    "tap": "0.4.x"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "0.10",
+    "npm": "1"
+  }
+}
