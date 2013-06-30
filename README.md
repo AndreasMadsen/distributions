@@ -67,6 +67,11 @@ Create a normal distribution, with a custom mean (`mean`) and standard deviation
 
 Create a student t distribution, with a degree of freedom set to `df`.
 
+## Testing
+
+All functions are tested by comparing with a mathematical reference
+either _MatLab_, _Maple_ or _R_.
+
 ## License
 
 **The software is license under "MIT"**
