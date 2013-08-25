@@ -14,13 +14,13 @@ npm install distributions
 var distributions = require('distributions');
 var normal = distributions.Normal(1 /* mean */, 2 /* std deviation */);
 
-console.log(mathfn.pdf(1)); // 0.199...
-console.log(mathfn.cdf(1)); // 0.5
-console.log(mathfn.inv(1)); // Infiniy
+console.log(normal.pdf(1)); // 0.199...
+console.log(normal.cdf(1)); // 0.5
+console.log(normal.inv(1)); // Infiniy
 
-console.log(mathfn.mean()); // 1
-console.log(mathfn.median()); // 1
-console.log(mathfn.variance()); // 4
+console.log(normal.mean()); // 1
+console.log(normal.median()); // 1
+console.log(normal.variance()); // 4
 ```
 
 ## Documentation
