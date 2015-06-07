@@ -1,5 +1,5 @@
 
-var files = ['normal', 'uniform', 'studentt'];
+var files = ['normal', 'uniform', 'studentt', 'truncated', 'pareto'];
 
 for (var i = 0, l = files.length; i < l; i++) {
   var fns = require('./distributions/' + files[i] + '.js');
