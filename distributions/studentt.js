@@ -20,7 +20,7 @@ function StudenttDistribution(df) {
 
   this._df_half = df / 2;
 }
-exports.Studentt = StudenttDistribution;
+module.exports = StudenttDistribution;
 
 StudenttDistribution.prototype.pdf = function (x) {
   return this._pdf_const * Math.pow(1 + ((x*x) / this._df), this._pdf_exp);

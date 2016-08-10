@@ -21,7 +21,7 @@ function NormalDistribution(mean, sd) {
   this._sd = sd || 1;
   this._var = this._sd * this._sd;
 }
-exports.Normal = NormalDistribution;
+module.exports = NormalDistribution;
 
 // -0.5 * log(2 Pi)
 var HALF_TWO_PI_LOG = -0.91893853320467274180;

@@ -22,7 +22,7 @@ function UniformDistribution(a, b) {
   this._mean = (this._a + this._b) / 2;
   this._var = (this._a - this._b) * (this._a - this._b) / 12;
 }
-exports.Uniform = UniformDistribution;
+module.exports = UniformDistribution;
 
 UniformDistribution.prototype.pdf = function (x) {
   return (x < this._a || x > this._b) ? 0 : this._k;
