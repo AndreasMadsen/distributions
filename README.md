@@ -1,4 +1,4 @@
-#distributions
+# distributions
 
 > A collection of probability distribution functions
 
@@ -66,6 +66,11 @@ Create a normal distribution, with a custom mean (`mean`) and standard deviation
 ##### `Studentt(df)` - The Student t Distribution
 
 Create a student t distribution, with a degree of freedom set to `df`.
+
+##### `Binomial(properbility, size)` - The Binomial Distribution
+
+Create a binomial distribution, with a a given `properbility` of success and
+sample `size`.
 
 ## Testing
 
