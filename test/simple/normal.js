@@ -173,6 +173,6 @@ test('testing none standard normal key values', function (t) {
   t.equal(normal.median(), 1);
   t.equal(normal.mean(), 1);
   t.equal(normal.variance(), 4);
-  
+
   t.end();
 });

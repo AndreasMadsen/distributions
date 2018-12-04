@@ -1,5 +1,5 @@
 
-var mathfn = require('mathfn');
+var cephes = require('cephes');
 
 function StudenttDistribution(df) {
   if (!(this instanceof StudenttDistribution)) {
@@ -15,7 +15,7 @@ function StudenttDistribution(df) {
 
   this._df = df;
 
-  this._pdf_const = (mathfn.gamma((df + 1) / 2) / (Math.sqrt(df * Math.PI) * mathfn.gamma(df / 2)));
+  this._pdf_const = (cephes.gamma((df + 1) / 2) / (Math.sqrt(df * Math.PI) * cephes.gamma(df / 2)));
   this._pdf_exp = -((df + 1) / 2);
 
   this._df_half = df / 2;
@@ -27,15 +27,13 @@ StudenttDistribution.prototype.pdf = function (x) {
 };
 
 StudenttDistribution.prototype.cdf = function (x) {
-  var fac = Math.sqrt(x * x + this._df);
-
-  return mathfn.incBeta((x + fac) / (2 * fac), this._df_half, this._df_half);
+  return cephes.stdtr(this._df, x);
 };
 
 StudenttDistribution.prototype.inv = function (p) {
-  var fac = mathfn.invIncBeta(2 * Math.min(p, 1 - p), this._df_half, 0.5);
-  var y = Math.sqrt(this._df * (1 - fac) / fac);
-  return (p > 0.5) ? y : -y;
+  if (p <= 0) return -Infinity;
+  if (p >= 1) return Infinity;
+  return cephes.stdtri(this._df, p);
 };
 
 StudenttDistribution.prototype.median = function () {

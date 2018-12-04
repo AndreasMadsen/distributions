@@ -3,16 +3,17 @@ function absoluteEqual(s) {
   for (var i = 0, l = s.map.length; i < l; i++) {
     var args = s.map[i].slice(0, -1);
     var last = s.map[i][ s.map[i].length - 1 ];
+    var ret = s.fn.apply(null, args);
 
     if (Number.isFinite(last)) {
       s.test.ok(
-        Math.abs( s.fn.apply(null, args) - last) < s.limit,
-        'almost absolute equal'
+        Math.abs(ret - last) < s.limit,
+        `is ${ret} almost absolute equal ${last}`
       );
     } else {
       s.test.ok(
-        Object.is(s.fn.apply(null, args), last),
-        'exact equal'
+        Object.is(ret, last),
+        `is ${ret} equal ${last}`
       );
     }
   }

@@ -1,5 +1,5 @@
 
-var mathfn = require('mathfn');
+var cephes = require('cephes');
 
 function NormalDistribution(mean, sd) {
   if (!(this instanceof NormalDistribution)) {
@@ -31,11 +31,13 @@ NormalDistribution.prototype.pdf = function (x) {
 };
 
 NormalDistribution.prototype.cdf = function (x) {
-  return 0.5 * (1 + mathfn.erf((x - this._mean) / Math.sqrt(2 * this._var)));
+  return cephes.ndtr((x - this._mean) / this._sd);
 };
 
 NormalDistribution.prototype.inv = function (p) {
-  return -Math.SQRT2 * this._sd * mathfn.invErfc(2 * p) + this._mean;
+  if (p <= 0) return -Infinity;
+  if (p >= 1) return Infinity;
+  return this._sd * cephes.ndtri(p) + this._mean;
 };
 
 NormalDistribution.prototype.median = function () {

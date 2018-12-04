@@ -18,10 +18,10 @@
     "uniform"
   ],
   "dependencies": {
-    "mathfn": "^1.0.0"
+    "cephes": "^1.1.2"
   },
   "devDependencies": {
-    "tap": "^6.3.0"
+    "tap": "^12.1.0"
   },
   "license": "MIT"
 }

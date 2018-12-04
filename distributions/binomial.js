@@ -1,5 +1,5 @@
 
-var mathfn = require('mathfn');
+var cephes = require('cephes');
 
 function BinomialDistribution(properbility, size) {
   if (!(this instanceof BinomialDistribution)) {
@@ -30,15 +30,15 @@ BinomialDistribution.prototype.pdf = function (x) {
   var p = this._properbility;
 
   // choose(n, x)
-  var binomialCoefficent = mathfn.gamma(n + 1) / (
-    mathfn.gamma(x + 1) * mathfn.gamma(n - x + 1)
+  var binomialCoefficent = cephes.gamma(n + 1) / (
+    cephes.gamma(x + 1) * cephes.gamma(n - x + 1)
   )
 
   return binomialCoefficent * Math.pow(p, x) * Math.pow(1 - p, n - x);
 };
 
 BinomialDistribution.prototype.cdf = function (x) {
-  return mathfn.incBeta(1 - this._properbility, this._size - x, x + 1);
+  return cephes.bdtr(x, this._size, this._properbility);
 };
 
 BinomialDistribution.prototype.inv = function (p) {
