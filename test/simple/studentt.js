@@ -2,6 +2,7 @@
 var test = require('tap').test;
 var distributions = require('../../distributions.js');
 var equals = require('../equal.js');
+var rCdfResults = require('../studentt-cdf.json');
 
 test('testing student t density function', function (t) {
   var studentt = distributions.Studentt(15);
@@ -95,5 +96,13 @@ test('testing student t key values', function (t) {
   t.equal(studentt.mean(), 0);
   t.equal(studentt.variance(), 15/13);
 
+  t.end();
+});
+
+test('testing student t against R', function (t) {
+  for (const rCdfResult of rCdfResults) {
+    const studentt = distributions.Studentt(rCdfResult.df);
+    t.ok(Math.abs(studentt.cdf(rCdfResult.t) - rCdfResult.cdf) <= Number.EPSILON);
+  }
   t.end();
 });
