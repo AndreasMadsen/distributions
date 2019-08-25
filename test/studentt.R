@@ -1,7 +1,7 @@
 # This script generates a JSON file with various values of Student's t-distribution.
 # The results will be compared with the one's obtained with the JavaScript implementation.
 
-dfs <- c(1, 2, 5, 10, 50)
+dfs <- c(1, 2, 2.5, 5, 10, 10.1, 50, 50.1)
 ts <- c(-10, -5, -2, -1, -0.5, 0, 0.5, 1, 2, 5, 10)
 ps <- c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
 
