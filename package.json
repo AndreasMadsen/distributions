@@ -1,7 +1,7 @@
 {
   "name": "distributions",
   "description": "A collection of probability distribution functions",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "Andreas Madsen <amwebdk@gmail.com>",
   "main": "./distributions.js",
   "scripts": {
@@ -18,10 +18,10 @@
     "uniform"
   ],
   "dependencies": {
-    "cephes": "^1.1.2"
+    "cephes": "^2.0.0"
   },
   "devDependencies": {
-    "tap": "^12.1.0"
+    "tap": "^18.0.0"
   },
   "license": "MIT"
 }
